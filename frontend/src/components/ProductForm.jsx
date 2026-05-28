@@ -1,11 +1,23 @@
 import { useState } from 'react'
 
-function ProductForm() {
+function ProductForm({ onCreateProduct }) {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
 
+    function handleSubmit(event) {
+        event.preventDefault()
+
+        onCreateProduct({
+            name: name,
+            price: price,
+        })
+
+        setName('')
+        setPrice('')
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="Name"

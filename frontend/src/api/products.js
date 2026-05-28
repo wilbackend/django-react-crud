@@ -6,7 +6,7 @@ export function createProduct(product) {
     return fetch('/api/products/', {
         method: 'POST',
         headers: {
-            'Content-type': 'application/json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(product),
     }).then((response) => response.json())
