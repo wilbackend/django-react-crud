@@ -1,12 +1,25 @@
 function ProductList({ products }) {
+    if (products.length === 0) {
+        return <p className="empty-state">No products yet.</p>
+    }
+
     return (
-        <ul>
-            {products.map((product) => (
-                <li key={product.id}>
-                    {product.name} - ${product.price}
-                </li>
-            ))}
-        </ul>
+        <table className="data-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {products.map((product) => (
+                    <tr key={product.id}>
+                        <td>{product.name}</td>
+                        <td>${product.price}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
     )
 }
 

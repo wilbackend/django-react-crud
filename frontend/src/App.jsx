@@ -3,7 +3,7 @@ import CustomersPage from './pages/CustomersPage'
 
 function App() {
     return (
-        <main>
+        <main className="app-shell">
             <ProductsPage />
             <CustomersPage />
         </main>

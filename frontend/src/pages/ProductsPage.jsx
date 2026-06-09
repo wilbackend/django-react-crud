@@ -17,8 +17,14 @@ function ProductsPage() {
     }
 
     return (
-        <section>
-            <h1>Products</h1>
+        <section className="resource-section">
+            <div className="section-header">
+                <div>
+                    <p className="eyebrow">Inventory</p>
+                    <h1>Products</h1>
+                </div>
+                <span className="record-count">{products.length} products</span>
+            </div>
             <ProductForm onCreateProduct={handleCreateProduct} />
             <ProductList products={products} />
         </section>
